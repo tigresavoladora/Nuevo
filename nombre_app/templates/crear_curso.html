@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear Curso</title>
+</head>
+<body>
+    <h1>Crear Curso</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" name="nombre" required><br>
+        <label for="descripcion">Descripción:</label><br>
+        <textarea name="descripcion" required></textarea><br>
+        <label for="id_profesor">Profesor:</label><br>
+        <select name="id_profesor" required>
+            {% for profesor in personas %}
+                <option value="{{ profesor.pk }}">{{ profesor.nombre }} {{ profesor.apellido }}</option>
+            {% endfor %}
+        </select><br><br>
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="{% url 'listar_cursos' %}">Volver a la lista de cursos</a>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Actualizar Persona</title>
+</head>
+<body>
+    <h1>Actualizar Persona</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" name="nombre" value="{{ persona.nombre }}"><br>
+        <label for="apellido">Apellido:</label><br>
+        <input type="text" name="apellido" value="{{ persona.apellido }}"><br>
+        <label for="edad">Edad:</label><br>
+        <input type="number" name="edad" value="{{ persona.edad }}"><br><br>
+        <button type="submit">Actualizar</button>
+    </form>
+    <a href="{% url 'listar_personas' %}">Volver a la lista de personas</a>
+</body>
+</html>

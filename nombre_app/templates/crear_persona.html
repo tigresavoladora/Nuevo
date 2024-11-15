@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear Persona</title>
+</head>
+<body>
+    <h1>Crear Persona</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="nombre">Nombre:</label><br>
+        <input type="text" name="nombre"><br>
+        <label for="apellido">Apellido:</label><br>
+        <input type="text" name="apellido"><br>
+        <label for="edad">Edad:</label><br>
+        <input type="number" name="edad"><br><br>
+        <button type="submit">Guardar</button>
+    </form>
+    <a href="{% url 'listar_personas' %}">Volver a la lista de personas</a>
+</body>
+</html>
