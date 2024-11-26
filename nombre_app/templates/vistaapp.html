@@ -1,0 +1,271 @@
+import React, { useState } from 'react';
+
+const NeuroEduca = () => {
+  // Estados
+  const [isRegistered, setIsRegistered] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
+  const [showRecursos, setShowRecursos] = useState(false);
+  const [showQuienesSomos, setShowQuienesSomos] = useState(false);
+  const [showNeurodivergencias, setShowNeurodivergencias] = useState(false);
+  const [showGuia, setShowGuia] = useState(false);
+  const [showLogin, setShowLogin] = useState(false);
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [materials] = useState([
+    { title: 'Material 1', category: 'Dislexia', materia: 'Matemática' },
+    { title: 'Material 2', category: 'Autismo', materia: 'Física' },
+    { title: 'Material 3', category: 'TDAH', materia: 'Programación' },
+  ]);
+  const [selectedCategory, setSelectedCategory] = useState('');
+  const [selectedMateria, setSelectedMateria] = useState('');
+
+  // Manejadores de eventos
+  const handleLogin = () => {
+    setIsRegistered(true);
+    setShowLogin(false);
+  };
+
+  const handleRegister = () => {
+    setIsRegistered(true);
+    setShowLogin(false);
+  };
+
+  const handleSelectCategory = (category: string) => {
+    setSelectedCategory(category);
+  };
+
+  const handleSelectMateria = (materia: string) => {
+    setSelectedMateria(materia);
+  };
+
+  return (
+    <div
+      className="h-screen w-screen flex flex-col items-center justify-start"
+      style={{ background: 'linear-gradient(to bottom, #5f98e4, #e3feff)', fontFamily: 'Varela Round' }}
+    >
+      {/* Header */}
+      <div className="absolute top-0 w-full flex justify-between items-center p-4">
+        <div className="flex items-center">
+          <h1 className="text-3xl text-[#4b82ca]">NeuroEduca</h1> 
+          <button className="ml-4" onClick={() => setShowMenu(!showMenu)}>
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+        <button className="bg-blue-700 text-white p-2 rounded" onClick={() => setShowLogin(!showLogin)}>
+          Hola, inicia sesión
+        </button>
+      </div>
+
+      {/* Login */}
+      {showLogin && (
+        <div className="absolute top-16 right-0 bg-gray-200 border-2 border-dashed rounded-xl p-4">
+          <input
+            type="text"
+            placeholder="Usuario"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            className="p-2 rounded border border-gray-300 mb-2"
+          />
+          <input
+            type="password"
+            placeholder="Contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className="p-2 rounded border border-gray-300 mb-2"
+          />
+          <button className="bg-blue-700 text-white p-2 rounded w-full mb-2" onClick={handleLogin}>
+            Iniciar sesión
+          </button>
+          <button className="bg-blue-700 text-white p-2 rounded w-full" onClick={handleRegister}>
+            Registrarse
+          </button>
+        </div>
+      )}
+
+      {/* Menú */}
+      {showMenu && (
+        <div className="absolute top-16 left-0 w-full flex flex-col items-center justify-center p-4 bg-gray-200 border-2 border-dashed rounded-xl">
+          <button
+            className="bg-blue-700 text-white p-2 rounded m-2"
+            onClick={() => setShowQuienesSomos(!showQuienesSomos)}
+          >
+            Quiénes somos
+          </button>
+          {showQuienesSomos && (
+            <div className="bg-[#e4f1ff] p-4 rounded m-2">
+              <p className="text-[#0645a3]">
+                Neuroeduca es una plataforma que proporciona recursos educativos para docentes que trabajan con estudiantes neurodivergentes. Se enfoca en sensibilizar y capacitar a los educadores, permitiendo una comprensión más profunda de las necesidades individuales de cada alumno. Además, fomenta la colaboración entre profesores, familias y especialistas, creando una comunidad de apoyo que enriquece el proceso educativo.<br/>
+                Al integrar estas prácticas, Neuroeduca no solo mejora el rendimiento académico, sino que también favorece el desarrollo emocional y social de los estudiantes. Esto les permite explorar todo su potencial en un ambiente inclusivo y respetuoso, donde se valora la diversidad y se promueve el aprendizaje significativo para todos.<br/>
+                Si tiene material que cree que pueda beneficiar a esta página, porfavor envíelo a neuroeduca@usm.cl
+              </p>
+            </div>
+          )}
+
+          <button
+            className="bg-blue-700 text-white p-2 rounded m-2"
+            onClick={() => setShowNeurodivergencias(!showNeurodivergencias)}
+          >
+            Acerca de las neurodivergencias
+          </button>
+          {showNeurodivergencias && (
+            <div className="bg-[#e4f1ff] p-4 rounded m-2">
+              <p className="text-[#0645a3]">
+                Término amplio que engloba a personas que
+procesan la información en forma diferente, tanto
+en lo emocional como en lo cognitivo.
+La forma de pensar, aprender y procesar la
+información de las personas neurodivergentes, no
+sigue los patrones establecidos.
+En general, presentan perspectivas y variadas
+fortalezas, como la creatividad, una intensa
+concentración en temas de interés, habilidades para
+resolver problemas, etc. (ADIPA, 2024)<br/>
+Por eso, al comprender la neurodivergencia, y al crear
+contextos integradores e inclusivos, se fomenta y
+valora la diversidad y se posibilita liberar el potencial
+de la comunidad neurodivergente. Algunas de las condiciones que se pueden
+encontrar dentro de la neurodivergencia son:<br/>
+• Trastorno por Déficit de Atención e Hiperactividad (TDAH)<br/>
+• Trastorno del Espectro Autista (TEA)<br/>
+• Dislexia<br/>
+• Discalculia<br/>
+• Trastorno de Ansiedad<br/>
+• Trastorno Bipolar<br/>
+• Trastorno Obsesivo Compulsivo (TOC)<br/>
+• Síndrome de Tourette<br/>
+• Epilepsia, entre otras.
+              </p>
+            </div>
+          )}
+
+          <button
+            className="bg-blue-700 text-white p-2 rounded m-2"
+            onClick={() => setShowGuia(!showGuia)}
+          >
+            Guía de inclusión
+          </button>
+          {showGuia && (
+            <div className="bg-[#e4f1ff] p-4 rounded m-2">
+              <p className="text-[#0645a3]">
+RECOMENDACIONES PARA EL USO DEL LENGUAJE EN DISCAPACIDAD<br/>
+USO CORRECTO<br/>
+• Persona con discapacidad.<br/>
+• Persona en situación de
+discapacidad.<br/> USO INCORRECTO<br/>
+• Persona con capacidades
+diferentes.<br/>
+• Personas diferentes.<br/>
+• Personas con necesidades
+especiales.<br/>
+• Discapacitado.<br/>
+• Incapacitado.<br/>
+• Deficiente.<br/>
+• Enfermito.<br/>
+• Anormal. <br/>
+Para facilitar el desempeño de las Persona
+con CEA (Condición en el Espectro del
+Autismo) en la Universidad, se recomienda:<br/>
+• Asegurar la accesibilidad del estudiantado a todos
+los espacios relevantes para su vida universitaria.<br/>
+• Reducir la tensión debido a falta de información
+formal.<br/>
+• Propiciar el trabajo en grupo guiado y consensuado
+en su conformación para asegurar la participación del
+estudiantado.<br/>
+• Otorgar más tiempo al estudiantado en actividades
+prácticas, talleres o laboratorios.<br/>
+• Entregar información precisa de las normas de la
+clase o laboratorio evitando vocabulario ambiguo o
+confuso.<br/>
+• Permitir el uso de tecnologías de apoyo en el aula
+(PC adaptado, grabadora, software toma apuntes,
+monitores/as de acompañamiento, etc).<br/>
+• Evitar usar expresiones coloquiales, indirectas u otro
+tipo de uso no literal del lenguaje.  <br/> 
+APOYOS DESDE
+EL PROGRAMA DE
+INCLUSIÓN<br/>
+El Programa de Inclusión cuenta en la actualidad con
+un modelo de articulación y vinculación interna que
+permite encontrar respuesta a los requerimientos que
+el estudiantado pertenecientes al programa necesitan. 
+<a href="https://rree.usm.cl/apoyo-y-acompanamiento/programa-inclusion/documentos/" target="_blank" rel="noopener noreferrer">
+ <br/> Programa de Inclusión - Documentos
+</a>
+              </p>
+            </div>
+          )}
+
+          <button
+            className="bg-blue-700 text-white p-2 rounded m-2"
+            onClick={() => setShowRecursos(!showRecursos)}
+          >
+            Recursos
+          </button>
+          {showRecursos && (
+            <div className="flex flex-col items-center justify-center">
+              <h2 className="text-lg text-[#4b82ca]">Categorías</h2>
+              {['Dislexia', 'Autismo', 'TDAH'].map((category) => (
+                <button
+                  key={category}
+                  className="bg-blue-700 text-white p-2 rounded m-2"
+                  onClick={() => handleSelectCategory(category)}
+                >
+                  {category}
+                </button>
+              ))}
+              <h2 className="text-lg text-[#4b82ca]">Materias</h2>
+              {['Matemática', 'Física', 'Programación'].map((materia) => (
+                <button
+                  key={materia}
+                  className="bg-blue-700 text-white p-2 rounded m-2"
+                  onClick={() => handleSelectMateria(materia)}
+                >
+                  {materia}
+                </button>
+              ))}
+              <div className="flex flex-col items-center mt-4">
+                {materials
+                  .filter(
+                    (material) =>
+                      material.category === selectedCategory &&
+                      material.materia === selectedMateria
+                  )
+                  .map((material) => (
+                    <div
+                      key={material.title}
+                      className="bg-gray-200 border-2 border-dashed rounded-xl w-64 h-16 m-2 flex items-center justify-center"
+                    >
+                      <h2 className="text-lg text-[#4b82ca]">{material.title}</h2>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          )}
+
+          <button
+            className="bg-blue-700 text-white p-2 rounded m-2"
+            onClick={() => console.log('Mi cuenta')}
+          >
+            Mi cuenta
+          </button>
+        </div>
+      )}
+    </div>
+  );
+};
+
+export default NeuroEduca;
