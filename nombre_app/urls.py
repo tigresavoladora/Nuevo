@@ -12,4 +12,6 @@ urlpatterns = [
     path('listar_cursos/', views.listar_cursos, name='listar_cursos'),
     path('actualizar_curso/<int:id>/', views.actualizar_curso, name='actualizar_curso'),
     path('eliminar_curso/<int:id>/', views.eliminar_curso, name='eliminar_curso'),
+    path('', views.index, name='index'),
 ]
+

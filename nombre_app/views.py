@@ -1,10 +1,8 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Persona, Curso
 
-
-# Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    return render(request, 'nombre_app/index.html')
 
 def crear_persona(request):
     if request.method == 'POST':
@@ -77,4 +75,6 @@ def eliminar_curso(request, id):
         curso.delete()
         return redirect('listar_cursos')
     return render(request, 'eliminar_curso.html', {'curso': curso})
-    
+
+
+

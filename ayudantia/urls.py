@@ -19,5 +19,5 @@ from django.urls import path, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('nombre_app.urls')), # Agregar la app que se creó
-]
+    path('', include('nombre_app.urls')),
+] 

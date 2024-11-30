@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroEduca</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        const NeuroEduca = () => {
+            const [showMenu, setShowMenu] = useState(false);
+            const [showRecursos, setShowRecursos] = useState(false);
+            const [showQuienesSomos, setShowQuienesSomos] = useState(false);
+            const [showNeurodivergencias, setShowNeurodivergencias] = useState(false);
+            const [showGuia, setShowGuia] = useState(false);
+            const [showLogin, setShowLogin] = useState(false);
+            const [username, setUsername] = useState("");
+            const [password, setPassword] = useState("");
+
+            return (
+                <div className="h-screen w-screen flex flex-col items-center justify-start bg-gradient-to-b">
+                    {/* Barra superior */}
+                    <div className="absolute top-0 w-full flex justify-between items-center p-4">
+                        <div className="flex items-center">
+                            <img src="{% static 'images/logo.png' %}" alt="NeuroEduca Logo" className="logo" />
+                            <button className="ml-4" onClick={() => setShowMenu(!showMenu)}>
+                                <svg
+                                    className="w-6 h-6"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M4 6h16M4 12h16M4 18h16"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+                        <button
+                            className="bg-blue-700 text-white p-2 rounded"
+                            onClick={() => setShowLogin(!showLogin)}
+                        >
+                            Hola, inicia sesión
+                        </button>
+                    </div>
+
+                    {/* Menú */}
+                    {showMenu && (
+                        <div className="absolute top-16 left-0 w-full flex flex-col items-center justify-center p-4 bg-gray-200 border-2 border-dashed rounded-xl">
+                            <button
+                                className="bg-blue-700 text-white p-2 rounded m-2"
+                                onClick={() => setShowQuienesSomos(!showQuienesSomos)}
+                            >
+                                Quiénes somos
+                            </button>
+                            {showQuienesSomos && (
+                                <div className="bg-[#e4f1ff] p-4 rounded m-2">
+                                    <p className="text-[#0645a3]">
+                                        {/* Contenido de Quiénes Somos */}
+                                    </p>
+                                </div>
+                            )}
+                            <button
+                                className="bg-blue-700 text-white p-2 rounded m-2"
+                                onClick={() => setShowNeurodivergencias(!showNeurodivergencias)}
+                            >
+                                Acerca de las neurodivergencias
+                            </button>
+                            {showNeurodivergencias && (
+                                <div className="bg-[#e4f1ff] p-4 rounded m-2">
+                                    <p className="text-[#0645a3]">
+                                        {/* Contenido de Acerca de las Neurodivergencias */}
+                                    </p>
+                                </div>
+                            )}
+                            {/* Agregar botones para "Guía de Inclusión", "Recursos", y "Mi cuenta" */}
+                        </div>
+                    )}
+
+                    {/* Login */}
+                    {showLogin && (
+                        <div className="absolute top-16 right-0 bg-gray-200 border-2 border-dashed rounded-xl p-4">
+                            {/* Login Fields */}
+                        </div>
+                    )}
+                </div>
+            );
+        };
+
+        const root = ReactDOM.createRoot(document.getElementById("root"));
+        root.render(<NeuroEduca />);
+    </script>
+</body>
+</html>

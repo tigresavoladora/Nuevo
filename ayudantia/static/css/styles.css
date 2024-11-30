@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.h-screen {
+    height: 100vh;
+}
+
+.w-screen {
+    width: 100vw;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.justify-start {
+    justify-content: flex-start;
+}
+
+.bg-gradient-to-b {
+    background: linear-gradient(to bottom, #5f98e4, #e3feff);
+}
+
+.text-blue-700 {
+    color: #0645a3;
+}
+
+.bg-blue-700 {
+    background-color: #4b82ca;
+}
+
+.text-white {
+    color: white;
+}
+
+.p-2 {
+    padding: 0.5rem;
+}
+
+.rounded {
+    border-radius: 0.25rem;
+}
+
+.logo {
+    width: 120px; /* Ajusta el tamaño del logo */
+    height: auto;
+}
+
+button {
+    cursor: pointer;
+}

@@ -16,7 +16,10 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # Asegúrate de que está correctamente apuntando a tu carpeta estática
+]
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -58,8 +61,8 @@ ROOT_URLCONF = 'ayudantia.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'templates'], # Agregar la carpeta templates
-        'APP_DIRS': True,
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Esta es la carpeta global de templates (si tienes alguna global)
+        'APP_DIRS': True,  # Esto le indica a Django que busque en cada app dentro de la carpeta 'templates'
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -82,7 +85,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'postgres', # Nombre de la base de datos
         'USER': 'postgres', # Nombre de usuario
-        'PASSWORD': 'contrasena', # Contraseña que elegiste al instalar PostgreSQL
+        'PASSWORD': 'Kiba1234$', # Contraseña que elegiste al instalar PostgreSQL
         'HOST': 'localhost', # Host
         'PORT': '5432', # Puerto
     }
@@ -123,7 +126,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
