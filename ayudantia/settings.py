@@ -16,12 +16,6 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATICFILES_DIRS = [
-    BASE_DIR / "static",  # Asegúrate de que está correctamente apuntando a tu carpeta estática
-]
-
-
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
@@ -32,7 +26,6 @@ SECRET_KEY = 'django-insecure-o*i@yu51ro2(tj#b6t+krd3w4u4gxl36uk2*&_*3sdf*7k%t!*
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 # Application definition
 
@@ -126,11 +119,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
+# settings.py
+
 STATIC_URL = '/static/'
+
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    BASE_DIR / "static",  # Esto apunta a 'C:\Users\tigre\OneDrive\Documentos\GitHub\Nuevo\static'
+    BASE_DIR / "ayudantia/static",
 ]
 
+# Si estás en un entorno de producción, debes tener STATIC_ROOT configurado también
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
