@@ -1,0 +1,243 @@
+{% load static %}
+
+<header>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a href="/">
+        <img src="{% static 'img/logo.png' %}" alt="NeuroEduca Logo" height="100" class="d-inline-block align-top me-4">
+      </a>
+      <div class="dropdown me-auto">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" data-bs-auto-close="false">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <ul class="dropdown-menu text-center">
+          <li>
+            <p class="d-inline-flex gap-1">
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#quienesSomos" aria-expanded="false" aria-controls="quienesSomos">
+                Quiénes somos
+              </button>
+            </p>
+            <div class="collapse" id="quienesSomos">
+              <div class="card card-body text-justify mb-3">
+                Neuroeduca es una plataforma que proporciona recursos educativos para docentes que trabajan con estudiantes neurodivergentes. 
+                Se enfoca en sensibilizar y capacitar a los educadores, permitiendo una comprensión más profunda de las necesidades individuales de cada alumno. 
+                Además, fomenta la colaboración entre profesores, familias y especialistas, creando una comunidad de apoyo que enriquece el proceso educativo.
+                Al integrar estas prácticas, Neuroeduca no solo mejora el rendimiento académico, sino que también favorece el desarrollo emocional y social de los estudiantes. 
+                Esto les permite explorar todo su potencial en un ambiente inclusivo y respetuoso, donde se valora la diversidad y se promueve el aprendizaje significativo para todos.
+                Si tiene material que cree que pueda beneficiar a esta página, porfavor envíelo a neuroeduca@usm.cl
+              </div>
+            </div>
+          </li>
+          <li>
+            <p class="d-inline-flex gap-1">
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#acercaDe" aria-expanded="false" aria-controls="acercaDe">
+                Acerca de las neurodivergencias
+              </button>
+            </p>
+            <div class="collapse" id="acercaDe">
+              <div class="card card-body text-justify mb-3">
+                Término amplio que engloba a personas que procesan la información en forma diferente, tanto en lo emocional como en lo cognitivo. 
+                La forma de pensar, aprender y procesar la información de las personas neurodivergentes, no sigue los patrones establecidos. 
+                En general, presentan perspectivas y variadas fortalezas, como la creatividad, una intensa concentración en temas de interés, 
+                habilidades para resolver problemas, etc. (ADIPA, 2024)<br>
+                Por eso, al comprender la neurodivergencia, y al crear contextos integradores e inclusivos, 
+                se fomenta y valora la diversidad y se posibilita liberar el potencial de la comunidad neurodivergente. 
+                Algunas de las condiciones que se pueden encontrar dentro de la neurodivergencia son:
+                <ul>
+                  <li>Trastorno por Déficit de Atención e Hiperactividad (TDAH)</li>
+                  <li>Trastorno del Espectro Autista (TEA)</li>
+                  <li>Dislexia</li>
+                  <li>Discalculia</li>
+                  <li>Trastorno de Ansiedad</li>
+                  <li>Trastorno Bipolar</li>
+                  <li>Trastorno Obsesivo Compulsivo (TOC)</li>
+                  <li>Síndrome de Tourette</li>
+                  <li>Epilepsia, entre otras.</li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li>
+            <p class="d-inline-flex gap-1">
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#guiaInclusion" aria-expanded="false" aria-controls="guiaInclusion">
+                Guía de Inclusión
+              </button>
+            </p>
+            <div class="collapse" id="guiaInclusion">
+              <div class="card card-body text-justify mb-3">
+                RECOMENDACIONES PARA EL USO DEL LENGUAJE EN DISCAPACIDAD<br>
+                USO CORRECTO
+                <ul>
+                  <li>Persona con discapacidad</li>
+                  <li>Persona en situación de discapacidad</li>
+                </ul>
+                USO INCORRECTO
+                <ul>
+                  <li>Persona con capacidades diferentes</li>
+                  <li>Personas diferentes</li>
+                  <li>Personas con necesidades especiales</li>
+                  <li>Discapacitado</li>
+                  <li>Incapacitado</li>
+                  <li>Deficiente</li>
+                  <li>Enfermito</li>
+                  <li>Anormal</li>
+                </ul>
+                Para facilitar el desempeño de las Persona con CEA (Condición en el Espectro del Autismo) en la Universidad, se recomienda:
+                <ul>
+                  <li>Asegurar la accesibilidad del estudiantado a todos los espacios relevantes para su vida universitaria</li>
+                  <li>Reducir la tensión debido a falta de información formal</li>
+                  <li>Propiciar el trabajo en grupo guiado y consensuado en su conformación para asegurar la participación del estudiantado</li>
+                  <li>Otorgar más tiempo al estudiantado en actividades prácticas, talleres o laboratorios</li>
+                  <li>Entregar información precisa de las normas de la clase o laboratorio evitando vocabulario ambiguo o confuso</li>
+                  <li>Permitir el uso de tecnologías de apoyo en el aula (PC adaptado, grabadora, software toma apuntes, monitores/as de acompañamiento, etc)</li>
+                  <li>Evitar usar expresiones coloquiales, indirectas u otro tipo de uso no literal del lenguaje</li>
+                </ul>
+                APOYOS DESDE EL PROGRAMA DE INCLUSIÓN<br>
+                El Programa de Inclusión cuenta en la actualidad con un modelo de articulación y vinculación interna que permite encontrar respuesta a los requerimientos que el estudiantado pertenecientes al programa necesitan.<br>
+                <a href="https://rree.usm.cl/apoyo-y-acompanamiento/programa-inclusion/" target="_blank" rel="noopener noreferrer">
+                  Programa de Inclusión
+                </a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <p class="d-inline-flex gap-1">
+              <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#recursos" aria-expanded="false" aria-controls="recursos">
+                Recursos
+              </button>
+            </p>
+            <div class="collapse" id="recursos">
+              <div class="card card-body text-center mb-3">
+                <h2>
+                  Categorías
+                </h2>
+                <div class="d-flex justify-content-center">
+                  <button class="btn btn-primary mb-3 mt-2 recurso" type="button">
+                    Dislexia
+                  </button>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button class="btn btn-primary mb-3 recurso" type="button">
+                    Autismo
+                  </button>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button class="btn btn-primary mb-3 recurso" type="button">
+                    TDAH
+                  </button>
+                </div>
+                <h2>
+                  Materias
+                </h2>
+                <div class="d-flex justify-content-center">
+                  <button class="btn btn-primary mb-3 mt-2 recurso" type="button">
+                    Matemática
+                  </button>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button class="btn btn-primary mb-3 recurso" type="button">
+                    Física
+                  </button>
+                </div>
+                <div class="d-flex justify-content-center">
+                  <button class="btn btn-primary mb-1 recurso" type="button">
+                    Programación
+                  </button>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a class="btn btn-primary mb-3" type="button" href="{% url 'myaccount' %}">
+              Mi Cuenta
+            </a>
+          </li>
+        </ul>
+      </div>
+      {% if request.user.is_authenticated %}
+      <button class="btn btn-primary" id="logout-button">
+        Cerrar Sesión
+      </button>
+      {% else %}
+      <div class="dropdown">
+        <button id="login-dropdown" class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Hola, inicia sesión
+        </button>
+        <ul class="dropdown-menu login-menu text-center" style="display: none;" data-bs-popper="static">
+          {% include 'registration/login.html' %}
+        </ul>
+        <ul class="dropdown-menu signup-menu text-center" style="display: none;" data-bs-popper="static">
+          {% include 'registration/signup.html' %}
+        </ul>
+      </div>
+      {% endif %}
+    </div>
+  </nav>
+</header>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var loginDropdownButton = document.getElementById('login-dropdown');
+    var registerButton = document.getElementById('registerButton');
+    var loginMenu = document.querySelector('.login-menu');
+    var signupMenu = document.querySelector('.signup-menu');
+    registerButton.addEventListener('click', function () {
+      loginMenu.style.display = 'none';
+      loginMenu.classList.remove('show');
+      signupMenu.style.display = 'block';
+      signupMenu.classList.add('show');
+    });
+    loginDropdownButton.addEventListener('click', function (event) {
+      event.stopPropagation();
+      if (signupMenu.style.display === 'block') {
+        signupMenu.style.display = 'none';
+        signupMenu.classList.remove('show');
+        loginMenu.style.display = 'block';
+        loginMenu.classList.add('show');
+      } else if (loginMenu.style.display === 'none') {
+        loginMenu.style.display = 'block';
+        loginMenu.classList.add('show');
+      } else {
+        loginMenu.style.display = 'none';
+        loginMenu.classList.remove('show');
+      }
+    });
+    document.addEventListener('click', function (event) {
+      var isClickInsideLogin = loginDropdownButton.contains(event.target) || loginMenu.contains(event.target);
+      var isClickInsideSignup = signupMenu.contains(event.target);
+      if (!isClickInsideLogin && !isClickInsideSignup) {
+        loginMenu.style.display = 'none';
+        loginMenu.classList.remove('show');
+        signupMenu.style.display = 'none';
+        signupMenu.classList.remove('show');
+      }
+    });
+    var loginForm = document.querySelector('.login-menu form');
+    loginForm.addEventListener('submit', function (event) {
+      if (!loginForm.checkValidity()) {
+        event.preventDefault();
+        event.stopPropagation();
+        loginMenu.style.display = 'block';
+        loginMenu.classList.add('show');
+      }
+    });
+    loginForm.addEventListener('invalid', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      loginMenu.style.display = 'block';
+      loginMenu.classList.add('show');
+    }, true);
+    logoutButton.addEventListener('click', function () {
+      fetch("{% url 'logout' %}", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-CSRFToken': '{{ csrf_token }}'
+        }
+      }).then(response => {
+        if (response.ok) {
+          window.location.href = '/';
+        }
+      });
+    });
+  });
+</script>

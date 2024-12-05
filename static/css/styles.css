@@ -1,0 +1,102 @@
+html, 
+body {
+    height: 100%;
+    font-family: 'Varela Round', Arial, sans-serif;
+    font-size: 18px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #5f98e4, #e3feff);
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* HEADER */
+.text-justify {
+    text-align: justify;
+}
+
+.bg-body-tertiary {
+	background-color: #fff !important;
+}
+
+.btn-primary {
+    background-color: #5f98e4;
+    border-color: #5f98e4;
+    color: #fff;
+    font-size: 1.8em;
+    padding: 0.5em;
+}
+
+.dropdown {
+    position: unset;
+}
+
+.dropdown-menu.show {
+    width: 100vw;
+    border: transparent;
+    border-radius: 0;
+    margin-top: 0;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+.navbar-toggler-icon {
+    color: #fff;
+	background-image: url('../img/toggle-icon.svg');
+}
+
+.card {
+    color: #0645a3;
+    background-color: #e4f1ff;
+    border: transparent;
+    margin: 0em 5em 0em 5em;
+}
+
+.recurso {
+    width: fit-content;
+}
+
+/* LOGIN */
+#login-dropdown{
+    margin-right: 15px;
+}
+
+.login-menu {
+    width: auto !important;
+    left: unset !important;
+    right: 0 !important;
+    border-bottom-left-radius: 10px !important;
+}
+
+.signup-menu {
+    width: auto !important;
+    left: unset !important;
+    right: 0 !important;
+    border-bottom-left-radius: 10px !important;
+}
+
+.login-button {
+    font-size: 27px;
+}
+
+#id_username {
+    font-size: 1.5em;
+    width: max-content;
+    margin: 0 1em 1em 1em;
+}
+
+#id_password,
+#id_password1,
+#id_password2 {
+    font-size: 1.5em;
+    width: max-content;
+    margin: 0 1em 1em 1em;
+}

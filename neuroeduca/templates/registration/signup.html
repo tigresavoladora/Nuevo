@@ -1,0 +1,7 @@
+<form method="post" action="{% url 'signup' %}">
+    {% csrf_token %}
+    {{ signup_form.username }}
+    {{ signup_form.password1 }}
+    {{ signup_form.password2 }}
+    <button class="btn btn-primary login-button mb-3" type="submit">Registrarse</button>
+</form>

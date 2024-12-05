@@ -1,0 +1,183 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroEduca</title>
+
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const { useState } = React;
+
+        const NeuroEduca = () => {
+            const [showMenu, setShowMenu] = useState(false);
+            const [activeBubble, setActiveBubble] = useState("");
+
+            const handleBubbleToggle = (bubble) => {
+                setActiveBubble((prev) => (prev === bubble ? "" : bubble));
+            };
+
+            return (
+                <div className="h-screen w-screen flex flex-col items-center justify-start bg-gradient-to-b">
+                    {/* Header */}
+                    <div className="header-container">
+                        <div className="header-left">
+                            <img src="{% static 'img/logo.png' %}" alt="NeuroEduca Logo" className="logo" />
+                            <button className="menu-button" onClick={() => setShowMenu(!showMenu)}>
+                                <svg
+                                    className="w-8 h-8 text-blue-700"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    viewBox="0 0 24 24"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
+                                        d="M4 6h16M4 12h16M4 18h16"
+                                    />
+                                </svg>
+                            </button>
+                        </div>
+                        <button className="login-button">
+                            Hola, inicia sesión
+                        </button>
+                    </div>
+
+                    {/* Menu */}
+                    {showMenu && (
+                        <div className="menu-container">
+                            <button
+                                className="menu-item"
+                                onClick={() => handleBubbleToggle("quienesSomos")}
+                            >
+                                Quiénes somos
+                            </button>
+                            {activeBubble === "quienesSomos" && (
+                                <div className="info-bubble">
+                                    Neuroeduca es una plataforma que proporciona recursos educativos para docentes que trabajan con estudiantes neurodivergentes. Se enfoca en sensibilizar y capacitar a los educadores, permitiendo una comprensión más profunda de las necesidades individuales de cada alumno. Además, fomenta la colaboración entre profesores, familias y especialistas, creando una comunidad de apoyo que enriquece el proceso educativo.<br />
+                Al integrar estas prácticas, Neuroeduca no solo mejora el rendimiento académico, sino que también favorece el desarrollo emocional y social de los estudiantes. Esto les permite explorar todo su potencial en un ambiente inclusivo y respetuoso, donde se valora la diversidad y se promueve el aprendizaje significativo para todos.<br />
+                Si tiene material que cree que pueda beneficiar a esta página, porfavor envíelo a neuroeduca@usm.cl
+                                </div>
+                            )}
+                            <button
+                                className="menu-item"
+                                onClick={() => handleBubbleToggle("neurodivergencias")}
+                            >
+                                Acerca de neurodivergencias
+                            </button>
+                            {activeBubble === "neurodivergencias" && (
+                                <div className="info-bubble">
+                                    Término amplio que engloba a personas que
+procesan la información en forma diferente, tanto
+en lo emocional como en lo cognitivo.
+La forma de pensar, aprender y procesar la
+información de las personas neurodivergentes, no
+sigue los patrones establecidos.
+En general, presentan perspectivas y variadas
+fortalezas, como la creatividad, una intensa
+concentración en temas de interés, habilidades para
+resolver problemas, etc. (ADIPA, 2024)<br />
+Por eso, al comprender la neurodivergencia, y al crear
+contextos integradores e inclusivos, se fomenta y
+valora la diversidad y se posibilita liberar el potencial
+de la comunidad neurodivergente. Algunas de las condiciones que se pueden
+encontrar dentro de la neurodivergencia son:<br />
+• Trastorno por Déficit de Atención e Hiperactividad (TDAH)<br />
+• Trastorno del Espectro Autista (TEA)<br />
+• Dislexia<br />
+• Discalculia<br />
+• Trastorno de Ansiedad<br />
+• Trastorno Bipolar<br />
+• Trastorno Obsesivo Compulsivo (TOC)<br />
+• Síndrome de Tourette<br />
+• Epilepsia, entre otras.
+                                </div>
+                            )}
+                            <button
+                                className="menu-item"
+                                onClick={() => handleBubbleToggle("guia")}
+                            >
+                                Guía de inclusión
+                            </button>
+                            {activeBubble === "guia" && (
+                                <div className="info-bubble">
+                                    RECOMENDACIONES PARA EL USO DEL LENGUAJE EN DISCAPACIDAD<br />
+USO CORRECTO<br />
+• Persona con discapacidad.<br />
+• Persona en situación de
+discapacidad.<br /> USO INCORRECTO<br />
+• Persona con capacidades
+diferentes.<br />
+• Personas diferentes.<br />
+• Personas con necesidades
+especiales.<br />
+• Discapacitado.<br />
+• Incapacitado.<br />
+• Deficiente.<br />
+• Enfermito.<br />
+• Anormal. <br />
+Para facilitar el desempeño de las Persona
+con CEA (Condición en el Espectro del
+Autismo) en la Universidad, se recomienda:<br/>
+• Asegurar la accesibilidad del estudiantado a todos
+los espacios relevantes para su vida universitaria.<br />
+• Reducir la tensión debido a falta de información
+formal.<br />
+• Propiciar el trabajo en grupo guiado y consensuado
+en su conformación para asegurar la participación del
+estudiantado.<br />
+• Otorgar más tiempo al estudiantado en actividades
+prácticas, talleres o laboratorios.<br />
+• Entregar información precisa de las normas de la
+clase o laboratorio evitando vocabulario ambiguo o
+confuso.<br />
+• Permitir el uso de tecnologías de apoyo en el aula
+(PC adaptado, grabadora, software toma apuntes,
+monitores/as de acompañamiento, etc).<br />
+• Evitar usar expresiones coloquiales, indirectas u otro
+tipo de uso no literal del lenguaje.  <br /> 
+APOYOS DESDE
+EL PROGRAMA DE
+INCLUSIÓN<br />
+El Programa de Inclusión cuenta en la actualidad con
+un modelo de articulación y vinculación interna que
+permite encontrar respuesta a los requerimientos que
+el estudiantado pertenecientes al programa necesitan. 
+<a href="https://rree.usm.cl/apoyo-y-acompanamiento/programa-inclusion/" target="_blank" rel="noopener noreferrer">
+ <br /> Programa de Inclusión
+</a>
+                                </div>
+                            )}
+                            <button
+                                className="menu-item"
+                                onClick={() => window.location.href = "/recursos"}
+                            >
+                                Recursos
+                            </button>
+                            <button
+                                className="menu-item"
+                                onClick={() => window.location.href = "/mi-cuenta"}
+                            >
+                                Mi cuenta
+                            </button>
+                        </div>
+                    )}
+                </div>
+            );
+        };
+
+        ReactDOM.render(<NeuroEduca />, document.getElementById("root"));
+    </script>
+</body>
+</html>
